@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <div class="login-div">
+        <form class="login-form" method="POST" action="{% url 'login' %}">
+            <h1 class="login-title">BRGY. LIBERTY COOP</h1>
+            {% csrf_token %}
+            <div>
+                <input class="login-field" type="text" name="username" placeholder="Enter Username">
+            </div>
+            <div>
+                <input class="login-field" type="password" name="password" placeholder="Enter Password">
+            </div>
+            <button class="login-btn" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

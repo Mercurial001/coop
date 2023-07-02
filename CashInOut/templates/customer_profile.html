@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav id="main-nav">
+        <ul id="nav-links">
+            <li class="nav-link">
+                <a href="{% url 'customer-page' %}">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="customer-records-section">
+        <div class="customer-detail-div">
+            <div class="customer-name-div">
+                <h1 class="customer-name">{{ customer_profile }}</h1>
+            </div>
+            <div class="cash-in-out-div-inline">
+                <h1 class="cash-in-out-title">Cash Ins:</h1>
+                {% for cash_in in cash_ins %}
+                    <div class="cash-out-in-list">
+                        <p>Cash In: &#8369;{{ cash_in.cash_in }}</p>
+                        <p>Date Added: {{ cash_in.date_added }}</p>
+                        <p>Reference No: {{ cash_in.reference_no }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="cash-in-out-div-inline">
+                <h1 class="cash-in-out-title">Cash Outs:</h1>
+                {% for cash_out in cash_outs %}
+                    <div class="cash-out-in-list">
+                        <p>Cash Out: &#8369;{{ cash_out.cash_out }}</p>
+                        <p>Date Added: {{ cash_out.date_added }}</p>
+                        <p>Reference No: {{ cash_out.reference_no }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>

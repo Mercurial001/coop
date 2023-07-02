@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        /* Define print-specific styles */
+        @media print {
+            /* Hide non-essential elements */
+            table, th, td {
+                border:1px solid black;
+                border-collapse: collapse;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Monthly Records for {{ selected_month_word }} {{ selected_year }}</h2>
+    <h3>Cash-In Transactions:</h3>
+    <p>Total Cash-In: &#8369; {{ total_cash_ins}}</p>
+
+
+    <p>Total Cash-Out: &#8369; {{ total_cash_outs }}</p>
+
+    <!-- Display the cash-in transactions for the selected date -->
+    <h3>Cash-In Transactions:</h3>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>REFERENCE NO.</th>
+            <th>AMOUNT</th>
+        </tr>
+        {% for cash_in in cash_ins %}
+        <tr>
+            <td>{{ cash_in.name }}</td>
+            <td>{{ cash_in.reference_no }}</td>
+            <td> &#8369; {{ cash_in.cash_in }}</td>
+            <!-- Other fields of CashIn model -->
+        {% endfor %}
+        </tr>
+    </table>
+    <!-- Display the cash-out transactions for the selected date -->
+    <h3>Cash-Out Transactions:</h3>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>REFERENCE NO.</th>
+            <th>AMOUNT</th>
+        </tr>
+        {% for cash_out in cash_outs %}
+        <tr>
+            <td>{{ cash_out.name }}</td>
+            <td>{{ cash_out.reference_no }}</td>
+            <td> &#8369; {{ cash_out.cash_out }}</td>
+            <!-- Other fields of CashIn model -->
+        {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

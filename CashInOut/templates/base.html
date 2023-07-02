@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Brgy. Liberty Cash-in Cash-out</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav id="main-nav">
+        <ul id="nav-links">
+            <div class="nav-link">
+                <p>Hello, {{ auth_user }}</p>
+            </div>
+            <div class="profile-link">
+                <a href="{% url 'logout'  %}" class="logout-link" id="logout-link">Logout</a>
+            </div>
+            <li class="nav-link">
+                <a href="{% url 'yearly' %}">Annual Records</a>
+            </li>
+            <li class="nav-link">
+                <a href="{% url 'monthly' %}">Monthly Records</a>
+            </li>
+            <li class="nav-link">
+                <a href="{% url 'records' %}">Daily Records</a>
+            </li>
+            <li class="nav-link">
+                <a href="{% url 'homepage' %}">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="cash-in-out-form-section">
+        <div class="cash-in-out-form-div">
+            <form id="cash-in-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ cash_in_form.as_p }}
+                </div>
+                <div class="cash-in-out-btn-post">
+                    <button class="post-btn" name="cash_in_form_submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="cash-in-out-form-div">
+            <form id="cash-out-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ cash_out_form.as_p }}
+                </div>
+                <div class="cash-in-out-btn-post">
+                    <button class="post-btn" name="cash_out_form_submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="cash-in-out-tables-section">
+        <div class="cash-in-out-table">
+            <h1 class="cash-in-out-table-title">Cash Ins</h1>
+            <p>Total Cash Ins: &#8369 {{ total_cash_ins }}</p>
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>AMOUNT</th>
+                    <th>DATE</th>
+                    <th>REFERENCE NO.</th>
+                </tr>
+                {% for cash_in in cash_ins %}
+                <tr>
+                    <td>
+                        <a href="{% url 'customer_profile' cash_in.name.profile_name %}">
+                            {{ cash_in.name }}
+                        </a>
+                    </td>
+                    <td> &#8369 {{ cash_in.cash_in }}</td>
+                    <td class="column-dates-input-cash-in-out"> {{ cash_in.date_added }}</td>
+                    <td> {{ cash_in.reference_no }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="cash-in-out-table">
+            <h1 class="cash-in-out-table-title">Cash Outs</h1>
+            <p>Total Cash Outs: &#8369 {{ total_cash_outs }}</p>
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>AMOUNT</th>
+                    <th>DATE</th>
+                    <th>REFERENCE NO.</th>
+                </tr>
+                {% for cash_out in cash_outs %}
+                <tr>
+                    <td>
+                        <a href="{% url 'customer_profile' cash_out.name.profile_name %}">
+                            {{ cash_out.name }}
+                        </a>
+                    </td>
+                    <td> &#8369 {{ cash_out.cash_out }}</td>
+                    <td class="column-dates-input-cash-in-out"> {{ cash_out.date_added }}</td>
+                    <td> {{ cash_out.reference_no }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+</body>
+</html>

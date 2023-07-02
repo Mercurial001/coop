@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COOP Brgy. Liberty</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body class="customer-page">
+    <section class="frontpage-display">
+        <div class="introductory-title">
+            <h1>brgy. liberty coop</h1>
+        </div>
+        <div class="search-form-div">
+            <form class="customer-cash-in-out-form" method="POST" action="{% url 'customer-page' %}">
+                {% csrf_token %}
+                <div class="customer-search-field-div">
+                    <input id="name-search" class="customer-cash-in-out-search-field" type="text" name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="customer-search-field-div">
+                    <input id="reference_no_search" class="customer-cash-in-out-search-field" type="text" name="reference_number" placeholder="Your Reference Number">
+                </div>
+                <div class="customer-search-field-div">
+                    <button class="customer-cash-in-out-search-btn" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="hero-div">
+            <div class="cover"></div>
+            <div class="img-container">
+                <img class="back-img" src="{% static 'images/DSC_0448.JPG' %}">
+            </div>
+        </div>
+    </section>
+    <section class="info-section">
+        <div class="content-mission-vision">
+            {% for misvis in mission_vision %}
+                <div class="mission-vision-div">
+                    <h1>{{ misvis.title }}</h1>
+                    <p class="mission-vision-content">{{ misvis.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

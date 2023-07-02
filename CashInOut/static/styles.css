@@ -1,0 +1,327 @@
+html{
+    margin:0;
+    font-family:'Montserrat';
+}
+
+body{
+    margin:0;
+}
+
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+
+/* base.html */
+
+.cash-in-out-form-div{
+    display:inline-block;
+    margin:40px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding:40px;
+    border-radius:20px;
+}
+
+.cash-in-out-table{
+    display:inline-block;
+    margin:40px;
+    vertical-align:top;
+}
+
+.cash-in-field{
+    background-color:rgb(220,220,220);
+    width:300px;
+    height:35px;
+    border-radius:10px;
+    border:1px rgb(120,120,120) solid;
+}
+
+.cash-out-field{
+    background-color:rgb(220,220,220);
+    width:300px;
+    height:35px;
+    border-radius:10px;
+    border:1px rgb(120,120,120) solid;
+}
+
+.profile-name-field{
+    background-color:rgb(220,220,220);
+    width:300px;
+    height:35px;
+    border-radius:10px;
+    border:1px rgb(120,120,120) solid;
+
+}
+
+.post-btn{
+    background-color:beige;
+    color:rgb(50,50,50);
+    font-family:'Montserrat';
+    border:1px rgb(120,120,120) solid;
+    padding-right:30px;
+    padding-left:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:10px;
+}
+
+.post-btn:hover{
+    background-color:rgb(40,40,40);
+    color:beige;
+    transition:0.8s;
+}
+
+.cash-in-out-btn-post{
+    text-align:center;
+}
+
+.cash-in-out-tables-section{
+    font-family:'Montserrat';
+}
+
+.cash-in-out-table-title{
+    color:rgb(40,40,40);
+}
+
+.column-dates-input-cash-in-out{
+    text-transform:uppercase;
+}
+
+/* customer_profile.html */
+
+.customer-records-section{
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.customer-detail-div{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width:60%;
+    margin:auto;
+    padding:20px;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+}
+
+.cash-in-out-div-inline{
+    display:inline-block;
+    vertical-align:top;
+    margin:30px;
+}
+
+.customer-name-div{
+    border-bottom:1px rgb(120,120,120) solid;
+}
+
+.customer-name{
+    width:100px;
+    text-align:center;
+    border-radius:20px;
+    color:rgb(40,40,40);
+    font-family:'Montserrat';
+}
+
+.cash-in-out-title{
+    border-bottom: rgb(130,130,130) solid 2px;
+    width:130px;
+    color:rgb(40,40,40);
+    font-family: "Montserrat";
+}
+
+.cash-out-in-list{
+    font-family:'Montserrat';
+    border:1px solid rgb(100,100,100);
+    padding:5px;
+    border-radius:20px;
+    margin:10px;
+}
+
+
+/* Main Nav */
+
+#main-nav{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    color:teal;
+    padding:30px;
+    overflow:hidden;
+}
+
+#nav-links{
+    list-style:none;
+}
+
+.nav-link{
+    display:inline-block;
+    float:right;
+    margin-right: 50px;
+    margin-top:-10px;
+}
+
+.nav-link a{
+    text-decoration:none;
+    font-family: 'Montserrat';
+    color:rgb(0,128,128);
+}
+
+.nav-link a:hover{
+    color:black;
+    transition:0.5s;
+}
+
+/* daily_records.html */
+
+.daily-records-section{
+    margin:40px;
+}
+
+
+
+
+/* customer_page.html */
+
+.hero-div{
+    overflow:hidden;
+    position: relative;
+}
+
+.cover{
+    background-color:blue;
+    padding:1000px;
+    opacity:0.3;
+    position:absolute;
+}
+
+.img-container{
+    max-width: 100%;
+    height: auto;
+    z-index:-10;
+    overflow:hidden;
+}
+
+.back-img{
+    height: 920px;
+    margin-top:-300px;
+    object-fit: cover;
+    z-index:-10;
+}
+
+.search-form-div{
+    position:absolute;
+    z-index:5;
+    margin-top:30%;
+    width:100%;
+    text-align:center;
+}
+
+.customer-search-field-div{
+    display:inline-block;
+    box-shadow: rgb(12,12,12) 0px 20px 30px -10px;
+}
+
+#name-search{
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+.customer-cash-in-out-search-field{
+    border:none;
+    width:270px;
+    height:20px;
+    padding:10px;
+
+}
+
+.customer-cash-in-out-search-btn{
+    height:40px;
+    width:100px;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    border:none;
+    font-family:'Montserrat';
+    background-color:rgb(143,188,143);
+}
+
+.customer-cash-in-out-search-btn:hover{
+    background-color:rgb(15,15,15);
+    color:beige;
+    transition:0.5s;
+}
+
+.introductory-title{
+    z-index:3;
+    position:absolute;
+    width:100%;
+    margin-top:10%;
+    text-align:center;
+}
+
+.introductory-title h1{
+    color:beige;
+    font-size:50px;
+    font-family:'Montserrat';
+    text-transform:uppercase;
+}
+
+.mission-vision-div{
+    display:inline-block;
+    width:400px;
+    margin:50px;
+}
+
+.info-section{
+    overflow:hidden;
+    padding:10px;
+    text-align:center;
+    font-family:'Montserrat';
+    z-index:5;
+}
+
+.mission-vision-content{
+    text-align:left !important;
+    line-height:25px;
+}
+
+
+
+/* login.html */
+
+.login-div{
+    margin:auto;
+    width:40%;
+}
+
+.login-form{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    text-align:center;
+    margin-top:20%;
+    padding:40px;
+    border-radius:10px;
+}
+
+.login-field{
+    width:400px;
+    height:40px;
+    margin:10px;
+    border-radius:5px;
+    border:1px solid rgb(120,120,120);
+}
+
+.login-btn{
+    margin-top:40px;
+    width:100px;
+    height:40px;
+    border-radius:5px;
+    border:1px solid rgb(120,120,120);
+    font-family:'Montserrat';
+}
+
+.login-btn:hover{
+    background-color:rgb(30,30,30);
+    color:beige;
+    transition:0.8s;
+}
+
+.login-title{
+    font-family:'Montserrat';
+    color:rgb(40,40,40);
+}
